@@ -1,11 +1,18 @@
 #!/bin/sh
 
-echo "Itroduzca una dirección IP para hacer un ping: "
+echo -n "Itroduzca una dirección IP para hacer un ping: "
 
 read IP
 
-echo "Introduzca cúantos pings quiere mandar: "
+echo -n "Introduzca el número de veces que quiere hacer ping: "
 
-read pings
+read num
 
-ping $IP -c $pings || echo Dirección IP no válida o inaccesible
+
+if [ ${IP} -eq  ]
+then
+	echo IP no válida
+else
+	echo Haciendo ping a la dirección IP
+	ping ${IP} -c ${num} 
+fi

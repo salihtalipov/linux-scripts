@@ -1,7 +1,13 @@
 #!/bin/sh
 
-echo "Itroduzca una dirección IP para hacer un ping: "
+echo -n "Itroduzca una dirección IP para hacer un ping: "
 
 read IP
 
-ping $IP || echo Dirección IP no válida
+if [ ${IP} -eq '' ]
+then
+	echo IP no válida
+else
+	echo Haciendo ping a la dirección IP
+	ping ${IP}
+fi
